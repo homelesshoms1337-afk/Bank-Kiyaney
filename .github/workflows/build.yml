@@ -18,6 +18,11 @@ jobs:
           pip install --user buildozer cython
           echo "PATH=$HOME/.local/bin:$PATH" >> $GITHUB_ENV
 
+      - name: Accept Android SDK licenses
+        run: |
+          yes | $ANDROIDSDK/cmdline-tools/latest/bin/sdkmanager --licenses
+          $ANDROIDSDK/cmdline-tools/latest/bin/sdkmanager "build-tools;36.1.0"
+
       - name: Build with Buildozer
         run: |
           buildozer init
