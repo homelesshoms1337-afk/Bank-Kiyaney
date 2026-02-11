@@ -44,6 +44,7 @@ jobs:
           buildozer init
           sed -i 's/title = My Application/title = Банк Кияни/g' buildozer.spec
           sed -i 's/package.name = myapp/package.name = kiyanibank/g' buildozer.spec
+          echo "android.accept_sdk_license = True" >> buildozer.spec
           buildozer -v android debug
 
       - name: Upload APK
