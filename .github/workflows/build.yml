@@ -56,6 +56,7 @@ jobs:
           export ANDROIDSDK=$HOME/.buildozer/android/platform/android-sdk
           export ANDROIDAPI=31
           export ANDROIDMINAPI=21
+          export SDKMANAGER="$ANDROIDSDK/cmdline-tools/latest/bin/sdkmanager"
           
           buildozer init
           sed -i 's/title = My Application/title = Банк Кияни/g' buildozer.spec
